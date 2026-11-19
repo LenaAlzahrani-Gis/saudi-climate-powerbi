@@ -39,7 +39,6 @@ An interactive **Power BI** dashboard analyzing 45 years of climate data across 
 
 - **Python** (`requests`, `pandas`): automated download from the NASA POWER API
 - **Power BI**: data model (star schema), DAX measures, conditional formatting, custom theme
-- **PBIP format**: the report and model are stored as readable code (TMDL + JSON)
 
 ---
 
@@ -47,17 +46,15 @@ An interactive **Power BI** dashboard analyzing 45 years of climate data across 
 
 ```
 ├── saudi_climate_download.py   # data download script (NASA POWER API)
-├── 1213.pbip                   # open this file in Power BI Desktop
-├── 1213.Report/                # report definition (visuals, theme)
-├── 1213.SemanticModel/         # data model, tables, DAX measures
-└── dashboard.png
+├── dashboard.png               # dashboard screenshot
+└── README.md
 ```
 
 ## ▶️ How to run
 
 1. `pip install requests pandas`
 2. `python saudi_climate_download.py` → generates `climate_monthly.csv` and `regions.csv`
-3. Open `1213.pbip` in **Power BI Desktop**, update the CSV file paths if needed, then **Refresh**
+3. Load both CSV files into **Power BI Desktop** and relate them on `region_id`
 
 ---
 
